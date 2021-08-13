@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/pages/home_page.dart';
 import 'package:flutter_basic/pages/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,21 +12,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    checkUser(username: "bikash.dulal");
     return MaterialApp(
-      home: LoginPage(),
+      home: Home(),
       themeMode: ThemeMode.light,
-      theme: ThemeData(primarySwatch: Colors.blueGrey),
+      theme: ThemeData(
+        primarySwatch: Colors.blueGrey,
+        fontFamily: GoogleFonts.arapey().fontFamily,
+      ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
+      initialRoute: "/login",
       routes: {
         "/login": (context) => LoginPage(),
       },
     );
   }
-}
-
-checkUser({@required username, password = ""}) {
-  // do something
 }
