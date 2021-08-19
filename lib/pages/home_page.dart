@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:flutter_basic/widgets/drawer.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class Home extends StatelessWidget {
               "Welcome to learning $course,I will complete $course in $days.Each day i will read $hours hrs"),
         ),
       ),
-      drawer: Drawer(),
+      drawer: StyledDrawer(),
     );
   }
 }
