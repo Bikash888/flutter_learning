@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
     double hours = 5.5;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Grantha"),
+        title: Text("Grantha", style: TextStyle(fontSize: 22)),
       ),
       body: Center(
         child: Container(
