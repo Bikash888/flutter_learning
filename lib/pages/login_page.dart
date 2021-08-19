@@ -9,6 +9,20 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   String name = '';
   bool loading = false;
+  final _loginFormKey = GlobalKey<FormState>();
+  routeToHome(BuildContext context) async {
+    if (_loginFormKey.currentState!.validate()) {
+      setState(() {
+        loading = true;
+      });
+      await Future.delayed(Duration(seconds: 2));
+      Navigator.pushNamed(context, GranthaRoutes.HomeRoute);
+      setState(() {
+        loading = false;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -22,81 +36,83 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 10,
             ),
-            Text("Grantha $name",
+            Text("Grantha",
                 style: TextStyle(
                   fontSize: 52,
                   fontWeight: FontWeight.w900,
                 )),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-              child: Column(
-                children: [
-                  TextFormField(
-                    onChanged: (value) {
-                      name = value;
-                      setState(() {});
-                    },
-                    decoration: InputDecoration(
-                        labelStyle: TextStyle(
-                            color: Colors.black45,
-                            fontSize: 22,
-                            fontWeight: FontWeight.w600),
-                        labelText: "Email address",
-                        hintText: "Enter email address"),
-                  ),
-                  SizedBox(height: 25),
-                  TextFormField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                        labelStyle: TextStyle(
-                            color: Colors.black45,
-                            fontSize: 22,
-                            fontWeight: FontWeight.w600),
-                        labelText: "Password",
-                        hintText: "Enter password"),
-                  ),
-                  SizedBox(height: 25),
-                  InkWell(
-                    onTap: () => {
-                      // Navigator.pushNamed(context, GranthaRoutes.HomeRoute)
-                      setState(() {
-                        loading = true;
-                      })
-                    },
-                    child: AnimatedContainer(
-                        duration: Duration(seconds: 1),
-                        width: loading ? 80 : 150,
-                        height: 50,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: Colors.teal[400],
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: loading
-                            ? Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 8, horizontal: 2),
-                                child: CircularProgressIndicator(
-                                  color: Colors.white,
-                                ),
-                              )
-                            : Text("Login",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 22))),
-                  )
-                  // ElevatedButton(
-                  //   onPressed: () =>
-                  //       {Navigator.pushNamed(context, GranthaRoutes.HomeRoute)},
-                  //   style: TextButton.styleFrom(
-                  //       backgroundColor: Colors.teal[400],
-                  //       minimumSize: Size(150, 40)),
-                  //   child: Text("Login",
-                  //       style: TextStyle(
-                  //           fontWeight: FontWeight.w500, fontSize: 22)),
-                  // )
-                ],
+              child: Form(
+                key: _loginFormKey,
+                child: Column(
+                  children: [
+                    TextFormField(
+                      onChanged: (value) {
+                        name = value;
+                        setState(() {});
+                      },
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "This is mandatory";
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                          labelStyle: TextStyle(
+                              color: Colors.black45,
+                              fontSize: 22,
+                              fontWeight: FontWeight.w600),
+                          labelText: "Email address",
+                          hintText: "Enter email address"),
+                    ),
+                    SizedBox(height: 25),
+                    TextFormField(
+                      obscureText: true,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "This is mandatory";
+                        } else if (value.length < 8) {
+                          return "Minimum 8 characters is required";
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                          labelStyle: TextStyle(
+                              color: Colors.black45,
+                              fontSize: 22,
+                              fontWeight: FontWeight.w600),
+                          labelText: "Password",
+                          hintText: "Enter password"),
+                    ),
+                    SizedBox(height: 25),
+                    Material(
+                      color: Colors.teal[400],
+                      borderRadius: BorderRadius.circular(8),
+                      child: InkWell(
+                        onTap: () => routeToHome(context),
+                        child: AnimatedContainer(
+                            duration: Duration(seconds: 1),
+                            width: loading ? 90 : 150,
+                            height: 50,
+                            alignment: Alignment.center,
+                            child: loading
+                                ? Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 8, horizontal: 2),
+                                    child: CircularProgressIndicator(
+                                      color: Colors.white,
+                                    ),
+                                  )
+                                : Text("Login",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 22))),
+                      ),
+                    )
+                  ],
+                ),
               ),
             )
           ],
