@@ -23,6 +23,11 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
+  bool isValidEmail(String email) {
+    final emailRegExp = RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+    return emailRegExp.hasMatch(email);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -55,6 +60,8 @@ class _LoginPageState extends State<LoginPage> {
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return "This is mandatory";
+                        } else if (!isValidEmail(value)) {
+                          return "Invalid email";
                         }
                         return null;
                       },
