@@ -17,29 +17,34 @@ class StyledDrawer extends StatelessWidget {
             DrawerHeader(
                 padding: EdgeInsets.zero,
                 margin: EdgeInsets.zero,
-                child: UserAccountsDrawerHeader(
-                    decoration: BoxDecoration(
-                      color: Colors.teal[50],
-                    ),
-                    margin: EdgeInsets.zero,
-                    accountName: Text(
-                      "Bikash",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 22,
-                          fontFamily: GoogleFonts.lato().fontFamily,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    accountEmail: Text(
-                      "bikash@gmail.com",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    currentAccountPicture: CircleAvatar(
-                      backgroundImage: NetworkImage(imageUrl),
-                    ))),
+                child: Container(
+                  height: 30,
+                  width: 30,
+                  child: UserAccountsDrawerHeader(
+                      currentAccountPictureSize: Size.square(60),
+                      decoration: BoxDecoration(
+                        color: Colors.teal[50],
+                      ),
+                      margin: EdgeInsets.zero,
+                      accountName: Text(
+                        "Bikash",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 22,
+                            fontFamily: GoogleFonts.lato().fontFamily,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      accountEmail: Text(
+                        "bikash@gmail.com",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      currentAccountPicture: CircleAvatar(
+                        backgroundImage: NetworkImage(imageUrl),
+                      )),
+                )),
             ListTile(
               leading: Icon(
                 Icons.home_outlined,

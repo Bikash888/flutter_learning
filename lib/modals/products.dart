@@ -1,3 +1,16 @@
+class ProductsModal {
+  static final products = [
+    Item(
+        id: "1",
+        name: "Bar Nature Valley",
+        author: "Gasper MacGarrity",
+        image:
+            "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
+        description: "Mechanical entropion of right upper eyelid",
+        price: "1200")
+  ];
+}
+
 class Item {
   final String id;
   final String name;
@@ -14,13 +27,3 @@ class Item {
       required this.description,
       required this.image});
 }
-
-final products = [
-  Item(
-      id: "1",
-      name: "Bar Nature Valley",
-      author: "Gasper MacGarrity",
-      image: "http://dummyimage.com/243x100.png/ff4444/ffffff",
-      description: "Mechanical entropion of right upper eyelid",
-      price: "adw")
-];
