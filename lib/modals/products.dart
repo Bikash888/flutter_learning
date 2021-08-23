@@ -1,14 +1,5 @@
 class ProductsModal {
-  static final products = [
-    Item(
-        id: "1",
-        name: "Bar Nature Valley",
-        author: "Gasper MacGarrity",
-        image:
-            "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
-        description: "Mechanical entropion of right upper eyelid",
-        price: "1200")
-  ];
+  static List<Item> products = [];
 }
 
 class Item {
@@ -18,6 +9,7 @@ class Item {
   final String price;
   final String description;
   final String image;
+  final String rating;
 
   Item(
       {required this.id,
@@ -25,5 +17,26 @@ class Item {
       required this.author,
       required this.price,
       required this.description,
-      required this.image});
+      required this.image,
+      required this.rating});
+
+  factory Item.fromMap(Map<String, dynamic> map) {
+    return Item(
+        id: map['id'],
+        name: map['name'],
+        author: map['author'],
+        price: map['price'],
+        description: map['description'],
+        rating: map['rating'],
+        image: map['image']);
+  }
+  toMap() => {
+        "id": id,
+        "name": name,
+        "author": author,
+        "price": price,
+        "description": description,
+        'image': image,
+        "rating": rating,
+      };
 }

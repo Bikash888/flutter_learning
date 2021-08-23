@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Bar Nature Valley",
+      "author": "Gasper MacGarrity",
+      "image": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
+      "description": "Mechanical entropion of right upper eyelid",
+      "price": "1200",
+      "rating": "3"
+    },
+    {
+      "id": "2",
+      "name": "Bar Nature Valley",
+      "author": "Gasper MacGarrity",
+      "image": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
+      "description": "Mechanical entropion of right upper eyelid",
+      "price": "1200",
+      "rating": "4"
+    },
+    {
+      "id": "3",
+      "name": "Bar Nature Valley",
+      "author": "Gasper MacGarrity",
+      "image": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
+      "description": "Mechanical entropion of right upper eyelid",
+      "price": "1200",
+      "rating": "2"
+    },
+    {
+      "id": "4",
+      "name": "Bar Nature Valley",
+      "author": "Gasper MacGarrity",
+      "image": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
+      "description": "Mechanical entropion of right upper eyelid",
+      "price": "1200",
+      "rating": "5"
+    },
+    {
+      "id": "5",
+      "name": "Bar Nature Valley",
+      "author": "Gasper MacGarrity",
+      "image": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
+      "description": "Mechanical entropion of right upper eyelid",
+      "price": "1200",
+      "rating": "3"
+    }
+  ]
+}
