@@ -106,44 +106,47 @@ class _ProductCardWidgetState extends State<ProductCardWidget> {
                                   SizedBox(
                                     height: 10,
                                   ),
-                                  ButtonBar(
-                                    buttonPadding: EdgeInsets.zero,
-                                    alignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      SizedBox(
-                                        // width: 200,
-                                        child: ElevatedButton(
-                                            style: ButtonStyle(),
-                                            onPressed: () {},
-                                            child: Text("Add to cart")),
-                                      ),
-                                      IconButton(
-                                        onPressed: () {
-                                          print(items.id);
-
-                                          setState(() {
-                                            if (favoriteList.contains(
-                                                int.parse(items.id))) {
-                                              print("contains");
-                                              favoriteList
-                                                  .remove(int.parse(items.id));
-                                              return;
-                                            } else {
-                                              favoriteList
-                                                  .add(int.parse(items.id));
-                                            }
-                                          });
-                                          print(favoriteList);
-                                        },
-                                        icon: Icon(
-                                          Icons.favorite,
-                                          color: favoriteList
-                                                  .contains(int.parse(items.id))
-                                              ? Colors.red[400]
-                                              : Colors.black,
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: ButtonBar(
+                                      buttonPadding: EdgeInsets.zero,
+                                      alignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        SizedBox(
+                                          // width: 200,
+                                          child: ElevatedButton(
+                                              style: ButtonStyle(),
+                                              onPressed: () {},
+                                              child: Text("Add to cart")),
                                         ),
-                                      )
-                                    ],
+                                        IconButton(
+                                          onPressed: () {
+                                            print(items.id);
+
+                                            setState(() {
+                                              if (favoriteList.contains(
+                                                  int.parse(items.id))) {
+                                                print("contains");
+                                                favoriteList.remove(
+                                                    int.parse(items.id));
+                                                return;
+                                              } else {
+                                                favoriteList
+                                                    .add(int.parse(items.id));
+                                              }
+                                            });
+                                            print(favoriteList);
+                                          },
+                                          icon: Icon(
+                                            Icons.favorite,
+                                            color: favoriteList.contains(
+                                                    int.parse(items.id))
+                                                ? Colors.red[400]
+                                                : Colors.black,
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   )
                                 ])),
                       ),
