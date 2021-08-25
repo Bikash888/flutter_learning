@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
+      home: LoginPage(),
       themeMode: ThemeMode.light,
       theme: GranthaTheme.themeData,
       darkTheme: ThemeData(
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: GranthaRoutes.LoginRoute,
       routes: {
-        // GranthaRoutes.HomeRoute: (context) => Home(),
+        GranthaRoutes.HomeRoute: (context) => Home(),
       },
     );
   }
