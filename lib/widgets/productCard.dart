@@ -54,7 +54,7 @@ class _ProductCardWidgetState extends State<ProductCardWidget> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      ProductDetails(product: items)));
+                                      ProductDetails(product: items.id)));
                         },
                         child: Card(
                             semanticContainer: false,

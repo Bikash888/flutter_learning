@@ -1,5 +1,7 @@
 class ProductsModal {
   static List<Item> products = [];
+  static getProductById(String id) =>
+      products.firstWhere((element) => element.id == id);
 }
 
 class Item {

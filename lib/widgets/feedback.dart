@@ -24,42 +24,64 @@ class _FeedbackFormState extends State<FeedbackForm> {
                   content: Padding(
                     padding: EdgeInsets.zero,
                     child: Container(
+                        height: 320,
                         child: Form(
-                      key: _feedbackForm,
-                      child: Column(
-                        children: [
-                          TextFormField(
-                            decoration: InputDecoration(
-                                labelText: "Email Address",
-                                labelStyle: TextStyle(
-                                    color: Colors.teal[900],
-                                    fontSize: 16,
-                                    fontFamily: GoogleFonts.lato().fontFamily,
-                                    fontWeight: FontWeight.bold)),
+                          key: _feedbackForm,
+                          child: Column(
+                            children: [
+                              TextFormField(
+                                decoration: InputDecoration(
+                                    labelText: "Email Address",
+                                    labelStyle: TextStyle(
+                                        color: Colors.teal[900],
+                                        fontSize: 16,
+                                        fontFamily:
+                                            GoogleFonts.lato().fontFamily,
+                                        fontWeight: FontWeight.bold)),
+                              ),
+                              SizedBox(height: 20),
+                              TextFormField(
+                                decoration: InputDecoration(
+                                    labelText: "Full Name",
+                                    labelStyle: TextStyle(
+                                        color: Colors.teal[900],
+                                        fontSize: 16,
+                                        fontFamily:
+                                            GoogleFonts.lato().fontFamily,
+                                        fontWeight: FontWeight.bold)),
+                              ),
+                              TextFormField(
+                                maxLines: 4,
+                                decoration: InputDecoration(
+                                    labelText: "Message",
+                                    labelStyle: TextStyle(
+                                        color: Colors.teal[900],
+                                        fontSize: 16,
+                                        fontFamily:
+                                            GoogleFonts.lato().fontFamily,
+                                        fontWeight: FontWeight.bold)),
+                              ),
+                              SizedBox(height: 20),
+                              Container(
+                                width: 100,
+                                child: ElevatedButton(
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all<Color>(
+                                              Colors.black),
+                                    ),
+                                    onPressed: () {},
+                                    child: Text(
+                                      "Submit",
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontFamily:
+                                              GoogleFonts.lato().fontFamily),
+                                    )),
+                              )
+                            ],
                           ),
-                          SizedBox(height: 20),
-                          TextFormField(
-                            decoration: InputDecoration(
-                                labelText: "Full Name",
-                                labelStyle: TextStyle(
-                                    color: Colors.teal[900],
-                                    fontSize: 16,
-                                    fontFamily: GoogleFonts.lato().fontFamily,
-                                    fontWeight: FontWeight.bold)),
-                          ),
-                          TextFormField(
-                            maxLines: 4,
-                            decoration: InputDecoration(
-                                labelText: "Message",
-                                labelStyle: TextStyle(
-                                    color: Colors.teal[900],
-                                    fontSize: 16,
-                                    fontFamily: GoogleFonts.lato().fontFamily,
-                                    fontWeight: FontWeight.bold)),
-                          )
-                        ],
-                      ),
-                    )),
+                        )),
                   ),
                 );
               });
