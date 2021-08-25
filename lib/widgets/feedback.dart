@@ -51,8 +51,6 @@ class _FeedbackFormState extends State<FeedbackForm> {
                             maxLines: 4,
                             decoration: InputDecoration(
                                 labelText: "Message",
-                                enabledBorder: InputBorder(
-                                    borderSide: BorderSide(width: 2)),
                                 labelStyle: TextStyle(
                                     color: Colors.teal[900],
                                     fontSize: 16,
