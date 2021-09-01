@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_basic/modals/products.dart';
+import 'package:flutter_basic/models/products.dart';
 import 'package:flutter_basic/pages/home_details_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 

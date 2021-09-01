@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_basic/modals/products.dart';
+import 'package:flutter_basic/models/products.dart';
 import 'package:flutter_basic/widgets/feedback.dart';
 import 'package:flutter_basic/widgets/reviewCard.dart';
 
