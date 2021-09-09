@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_basic/services/general_providers.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:riverpod/riverpod.dart';
 
 abstract class FirebaseAuthenticationService {
@@ -7,8 +8,8 @@ abstract class FirebaseAuthenticationService {
   User? getCurrentUser();
   Future<UserCredential?> createUserWithEmailAndPassword(
       String email, String password);
-  Future<UserCredential?> signInWithEmailAndPassword(
-      String email, String password);
+  Future<UserCredential?> signIn(String email, String password);
+  Future<void> logout();
 }
 
 final authServiceProvider =
@@ -39,13 +40,23 @@ class AuthService implements FirebaseAuthenticationService {
   }
 
   @override
-  Future<UserCredential?> signInWithEmailAndPassword(
-      String email, String password) async {
+  Future<UserCredential?> signIn(String email, String password) async {
+    print(email);
     try {
       await _read(firebaseAuthProvider)
           .signInWithEmailAndPassword(email: email, password: password);
-    } catch (e) {
-      print(e);
+    } on FirebaseAuthException catch (e) {
+      Fluttertoast.showToast(
+          msg: "Invalid credential",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.TOP,
+          timeInSecForIosWeb: 3,
+          fontSize: 16.0);
     }
+  }
+
+  @override
+  Future<void> logout() async {
+    await _read(firebaseAuthProvider).signOut();
   }
 }

@@ -112,10 +112,13 @@ class _LoginPageState extends State<LoginPage> {
                               setState(() {
                                 loading = true;
                               });
-                              await _authService.signInWithEmailAndPassword(
-                                  email, password);
-                              await Navigator.pushNamed(
-                                  context, GranthaRoutes.HomeRoute);
+
+                              await _authService.signIn(email, password);
+                              if (_authService.getCurrentUser() != null) {
+                                await Navigator.pushNamed(
+                                    context, GranthaRoutes.HomeRoute);
+                              }
+
                               setState(() {
                                 loading = false;
                               });

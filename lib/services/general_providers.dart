@@ -6,3 +6,5 @@ final firebaseAuthProvider =
 
 final authStateProvider =
     StreamProvider((ref) => ref.watch(firebaseAuthProvider).authStateChanges());
+
+final cartCountProvider = Provider((ref) => 0);

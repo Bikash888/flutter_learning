@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/services/auth_service.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 
-class StyledDrawer extends StatelessWidget {
+class StyledDrawer extends ConsumerWidget {
   const StyledDrawer({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ScopedReader watchReader) {
+    final _authProvider = watchReader(authServiceProvider);
     final imageUrl =
         'https://i.picsum.photos/id/1074/5472/3648.jpg?hmac=w-Fbv9bl0KpEUgZugbsiGk3Y2-LGAuiLZOYsRk0zo4A';
     return Drawer(
@@ -92,13 +96,18 @@ class StyledDrawer extends StatelessWidget {
                 Icons.logout_outlined,
                 color: Colors.blue,
               ),
-              title: Text(
-                "Logout",
-                textScaleFactor: 1.2,
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500),
+              title: InkWell(
+                onTap: () async {
+                  await _authProvider.logout();
+                },
+                child: Text(
+                  "Logout",
+                  textScaleFactor: 1.2,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500),
+                ),
               ),
             ),
           ],
