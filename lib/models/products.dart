@@ -12,6 +12,7 @@ class Item {
   final String description;
   final String image;
   final String rating;
+  final String summary;
 
   Item(
       {required this.id,
@@ -19,6 +20,7 @@ class Item {
       required this.author,
       required this.price,
       required this.description,
+      required this.summary,
       required this.image,
       required this.rating});
 
@@ -30,7 +32,8 @@ class Item {
         price: map['price'],
         description: map['description'],
         rating: map['rating'],
-        image: map['image']);
+        image: map['image'],
+        summary: map['summary']);
   }
   toMap() => {
         "id": id,
@@ -40,5 +43,6 @@ class Item {
         "description": description,
         'image': image,
         "rating": rating,
+        "summary": summary,
       };
 }

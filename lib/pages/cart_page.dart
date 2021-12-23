@@ -46,12 +46,13 @@ class __CartProductCardState extends State<_CartProductCard> {
                         child: Padding(
                           padding: const EdgeInsets.all(0),
                           child: ListTile(
-                            leading: Image.network(
-                                'https://i.picsum.photos/id/113/4168/2464.jpg?hmac=p1FqJDS9KHL70UWqUjlYPhJKBdiNOI_CIH0Qo-74_fU'),
-                            title: Text("Product name"),
-                            subtitle: Text("Rs : 1200"),
-                            trailing: Icon(Icons.delete),
-                          ),
+                              leading: Image.network(
+                                  'https://i.picsum.photos/id/113/4168/2464.jpg?hmac=p1FqJDS9KHL70UWqUjlYPhJKBdiNOI_CIH0Qo-74_fU'),
+                              title: Text("Product name"),
+                              subtitle: Text("Rs : 1200"),
+                              trailing: IconButton(
+                                  icon: Icon(Icons.remove_circle),
+                                  onPressed: () {})),
                         ),
                       )),
                     ),

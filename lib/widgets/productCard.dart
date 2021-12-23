@@ -42,12 +42,12 @@ class _ProductCardWidgetState extends State<ProductCardWidget> {
                   itemCount: ProductsModal.products.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       childAspectRatio: MediaQuery.of(context).size.width /
-                          (MediaQuery.of(context).size.height / 1.2),
+                          (MediaQuery.of(context).size.height - 60 / 1),
                       crossAxisCount: 2),
                   itemBuilder: (context, index) {
                     final items = ProductsModal.products[index];
                     return SizedBox(
-                      height: 50,
+                      height: 80,
                       child: InkWell(
                         onTap: () {
                           Navigator.push(
@@ -99,7 +99,7 @@ class _ProductCardWidgetState extends State<ProductCardWidget> {
                                     padding:
                                         const EdgeInsets.fromLTRB(8, 0, 8, 0),
                                     child: Text(
-                                      items.description,
+                                      items.summary,
                                       style: TextStyle(color: Colors.black54),
                                     ),
                                   ),

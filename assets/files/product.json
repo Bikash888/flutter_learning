@@ -2,10 +2,11 @@
   "products": [
     {
       "id": "1",
-      "name": "Bar Nature Valley",
-      "author": "Gasper MacGarrity",
-      "image": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
-      "description": "Mechanical entropion of right upper eyelid",
+      "name": "Palpasa Café",
+      "author": "Narayan wagle",
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1280086702i/4923850._UX75_.jpg",
+      "summary":"Felicitatedby Madan Purashkar in the year 2005, Palpasa Cafe, a novel by Narayan Wagle",
+      "description": "Felicitated by Madan Purashkar in the year 2005, Palpasa Cafe, a novel by Narayan Wagle, is one stop for readers of all kinds and ages. The editor of Kantipur Daily, Wagle's novel is set during the 10-year-long Maoists insurgency in Nepal.",
       "price": "1200",
       "rating": "3"
     },
@@ -15,6 +16,7 @@
       "author": "Gasper MacGarrity",
       "image": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
       "description": "Mechanical entropion of right upper eyelid",
+      "summary": "Mechanical entropion of right upper eyelid",
       "price": "1200",
       "rating": "4"
     },
@@ -24,6 +26,7 @@
       "author": "Gasper MacGarrity",
       "image": "https://i.picsum.photos/id/1060/5598/3732.jpg?hmac=31kU0jp5ejnPTdEt-8tAXU5sE-buU-y1W1qk_BsiUC8",
       "description": "Mechanical entropion of right upper eyelid",
+      "summary": "Mechanical entropion of right upper eyelid",
       "price": "1200",
       "rating": "2"
     },
@@ -33,6 +36,7 @@
       "author": "Gasper MacGarrity",
       "image": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
       "description": "Mechanical entropion of right upper eyelid",
+      "summary": "Mechanical entropion of right upper eyelid",
       "price": "1200",
       "rating": "5"
     },
@@ -42,6 +46,7 @@
       "author": "Gasper MacGarrity",
       "image": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
       "description": "Mechanical entropion of right upper eyelid",
+      "summary": "Mechanical entropion of right upper eyelid",
       "price": "1200",
       "rating": "3"
     }
