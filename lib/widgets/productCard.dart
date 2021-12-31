@@ -33,6 +33,7 @@ class _ProductCardWidgetState extends State<ProductCardWidget> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: (ProductsModal.products != null &&
